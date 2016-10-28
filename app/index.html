@@ -1,0 +1,89 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Book.IT</title>
+	<link href="css/norm.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="css/ui-style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+</head>
+
+<body ng-app="ngUygulamam" ng-controller="ngKontrol">
+	<div id="sideMenu">
+		<li><b>Continue Learning...</b></li>
+		<li>Chapters</li>
+		<li>Description</li>
+		<li>Attributions</li>
+		<li>About</li>
+		<li>Licencing</li>
+	</div>
+	<div id="generalCarrier">
+		<div class="header">
+			<!--<i class="material-icons">arrow_back</i>-->
+			<div class="menu"> <i class="material-icons">menu</i> </div>
+			<div id="appTitle">{{appTitle}}</div>
+		</div>
+		<div class="contentCarrier">
+			<div class="banner">
+				<div class="bannerText">
+					<div id="courseTitle">{{courseTitle}}</div>
+					<i class="material-icons">keyboard_arrow_down</i> </div>
+			</div>
+			<div class="tabs">
+				<ul>
+					<li ng-class="mainTab == 'chapter' ? 'active':''" ng-click="mainTab = 'chapter'">Chapters</li>
+					<li ng-class="mainTab == 'description' ? 'active':''" ng-click="mainTab = 'description'">Description</li>
+				</ul>
+			</div>
+			<div ng-switch="mainTab" class="content">
+				<div ng-switch-when="chapter">
+					<div class="stepList">
+						<li ng-repeat="ch in chapterList">
+							<i class="material-icons{{doneArray[$index]?' checked':''}}" ng-click="toggleChapterComplete($index)">check_circle</i>
+							<div class="chapterCarrier" ng-click="openChapter($index)">
+								<span id="chapterTitle">{{ch.title}}</span>
+								<div class="time">{{$index + 1}}. Chapter -
+									<span ng-if="ch.read">{{ch.read}} min read</span>
+									<span ng-if="!ch.read">Course is Locked!</span>
+								</div>
+							</div>
+						</li>
+					</div>
+				</div>
+				<div ng-switch-when="description">
+					<p>{{description}}</p>
+					<div class="info">
+						<li><b>Total Course Time: </b> 50 min
+						</li>
+						<li><b>Created By: </b> {{creator}}</li>
+						<li><b>Creator E-mail:</b> {{creatorEmail}}</li>
+					</div>
+					<a href="https://play.google.com/store/apps/developer?id=Dream+Oriented+Inc." target="_blank">
+						<div class="button">See More Courses</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="readerCarrier" class="readerCarrierClosed">
+		<div class="header">
+			<div class="back"><i class="material-icons">arrow_back</i></div>
+			<div id="appTitle">Reading Chapter {{currentChapter + 1}}</div>
+		</div>
+		<div class="contentCarrier" id="readerContentScroller">
+			<div class="content">
+				<h3>{{currentContentObj.title}}</h3>
+				<p ng-repeat="contentLine in currentContentObj.content track by $index" ng-bind-html="to_trusted(parse(contentLine))"></p>
+
+				<div class="button" ng-click="completeCurrent()">Complete This Course</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>
