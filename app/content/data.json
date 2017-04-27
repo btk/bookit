@@ -1,8 +1,0 @@
-{
-  "app_title": "Learning Linux Bash",
-  "course_title": "Bash Scripting and Linux Bash Commands",
-  "creator": "Burak Tokak",
-  "creator_email": "iletisim@buraktokak.com",
-  "description": "This is a practical guide which, while not always being too serious, tries to give real-life instead of theoretical examples. I partly wrote it because I don't get excited with stripped down and over-simplified examples written by people who know what they are talking about, showing some really cool Bash feature so much out of its context that you cannot ever use it in practical circumstances.",
-  "tags": ["bash", "linux", "bash commands"]
-}
