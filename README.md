@@ -11,7 +11,7 @@ Open the project with intel xdk, or pull and edit with your own editor.
 - Learn SQL - SQL Tutorial: <https://play.google.com/store/apps/details?id=org.dreamoriented.learnsql>
 - Learn Bash - Linux Tutorial: <https://play.google.com/store/apps/details?id=org.dreamoriented.learnbash>
 
-[](https://raw.githubusercontent.com/btk/bookit/master/docs/ss1.png) [](https://raw.githubusercontent.com/btk/bookit/master/docs/ss2.png) [](https://raw.githubusercontent.com/btk/bookit/master/docs/ss3.png)
+![ss1](https://raw.githubusercontent.com/btk/bookit/master/docs/ss1.png) ![ss2](https://raw.githubusercontent.com/btk/bookit/master/docs/ss2.png) ![ss3](https://raw.githubusercontent.com/btk/bookit/master/docs/ss3.png)
 
 ## Todo
 
